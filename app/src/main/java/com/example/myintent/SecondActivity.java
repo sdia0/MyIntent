@@ -24,10 +24,11 @@ public class SecondActivity extends AppCompatActivity {
         patron = findViewById(R.id.fatherNameText);
         age = findViewById(R.id.ageText);
 
-        lastName.setText(MainActivity.lastnameTxt);
-        name.setText(MainActivity.nameTxt);
-        patron.setText(MainActivity.fatherNameTxt);
-        age.setText(MainActivity.ageTxt);
+        Intent intent = getIntent();
+        lastName.setText(intent.getExtras().getString("s"));
+        name.setText(intent.getExtras().getString("n"));
+        patron.setText(intent.getExtras().getString("p"));
+        age.setText(intent.getExtras().getString("a"));
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

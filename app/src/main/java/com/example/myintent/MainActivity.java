@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     Button sendBtn;
     EditText lastName, name, fatherName, age;
-    public static String lastnameTxt, nameTxt, fatherNameTxt, ageTxt;
+    String lastnameTxt, nameTxt, fatherNameTxt, ageTxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 fatherNameTxt = String.valueOf(fatherName.getText());
                 ageTxt = String.valueOf(age.getText());
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("s", lastnameTxt);
+                intent.putExtra("n", nameTxt);
+                intent.putExtra("p", fatherNameTxt);
+                intent.putExtra("a", ageTxt);
                 startActivity(intent);
             }
         });
